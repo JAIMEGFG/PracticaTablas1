@@ -31,7 +31,7 @@ public class PestaniaBajas extends JPanel implements ActionListener {
     }
 
     private void acciones() {
-        
+
     }
 
     private void configurarModeloCombo() {
