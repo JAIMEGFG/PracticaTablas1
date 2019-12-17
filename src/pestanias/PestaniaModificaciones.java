@@ -90,12 +90,6 @@ public class PestaniaModificaciones extends JPanel implements ActionListener{
             configurarConstraint(0,1,GridBagConstraints.HORIZONTAL,GridBagConstraints.CENTER,0.3,0.3,1,1,configurarPanelArriba());
             configurarConstraint(0,2,GridBagConstraints.HORIZONTAL,GridBagConstraints.CENTER,0.3,0.3,1,1,configurarPanelCentro());
             configurarConstraint(0,3,GridBagConstraints.HORIZONTAL,GridBagConstraints.CENTER,0,0,1,1,configurarPanelAbajo());
-
-
-        /*this.setLayout(new BorderLayout());
-        this.add(configurarPanelArriba(),BorderLayout.NORTH);
-        this.add(configurarPanelCentro(),BorderLayout.CENTER);
-        this.add(configurarPanelAbajo(),BorderLayout.SOUTH);*/
         }
 
         private JPanel configurarPanelClave() {
@@ -138,16 +132,43 @@ public class PestaniaModificaciones extends JPanel implements ActionListener{
 
 
 
-        @Override
-        public void actionPerformed(ActionEvent e) {
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        if (e.getSource() == modeloCombo) {
+            Persona persona = (Persona) modeloCombo.getSelectedItem();
+            String nombre = persona.getNombre();
+            String apellido = persona.getApellido();
+            String calle = persona.getCalle();
+            int numero = persona.getNumero();
+            int edad = persona.getEdad();
+            int cd = persona.getCodigoPostal();
 
-
-
-        }
-
-        public void añadirPersona(String clave) {
-            System.out.println(clave);
-            //modelocombobox.addElement(clave);
+            nombreText.setText(nombre);
+            apellidoText.setText(apellido);
+            edadText.setText(calle);
+            calleText.setText(Integer.toString(numero));
+            numeroText.setText(Integer.toString(edad));
+            codigoPostalText.setText(Integer.toString(cd));
+        } else if (e.getSource()== modificar){
+            nombreText.setEditable(true);
+            apellidoText.setEditable(true);
+            edadText.setEditable(true);
+            calleText.setEditable(true);
+            numeroText.setEditable(true);
+            codigoPostalText.setEditable(true);
+        }else if (e.getSource() == limpiar){
+            nombreText.setText(" ");
+            apellidoText.setText(" ");
+            edadText.setText(" ");
+            calleText.setText(" ");
+            numeroText.setText(" ");
+            codigoPostalText.setText(" ");
         }
     }
+
+    public void añadirPersona(String clave) {
+        System.out.println(clave);
+        //modelocombobox.addElement(clave);
+    }
+}
 

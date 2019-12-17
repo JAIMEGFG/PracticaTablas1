@@ -126,6 +126,18 @@ public class PestaniaResumen extends JPanel implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
+        if (e.getSource() == darAlta){
+            String nombre = nombreText.getText();
+            String apellido = apellidoText.getText();
+            String clave = claveText.getText();
+            String calle = calleText.getText();
+            int numero = Integer.valueOf(numeroText.getText());
+            int edad = Integer.valueOf(edadText.getText());
+            int cp = Integer.valueOf(codigoPostalText.getText());
+        }else if (e.getSource() == darBaja){
+            if (tabla.getSelectedRow() !=1) {
 
+            }
+        }
     }
 }

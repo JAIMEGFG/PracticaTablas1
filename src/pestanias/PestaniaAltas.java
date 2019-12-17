@@ -96,8 +96,29 @@ public class PestaniaAltas extends JPanel implements ActionListener {
         darAlta.addActionListener(this);
     }
 
+
     @Override
     public void actionPerformed(ActionEvent e) {
+        if (e.getSource() == darAlta) {
+            if (claveText.getText().isEmpty() ||
+                    nombreText.getText().isEmpty() ||
+                    apellidoText.getText().isEmpty() ||
+                    edadText.getText().isEmpty() ||
+                    calleText.getText().isEmpty() ||
+                    numeroText.getText().isEmpty() ||
+                    codigoPostalText.getText().isEmpty()) {
 
+                JOptionPane.showMessageDialog(this, "Mensaje WARNING",
+                        "El campo está vacío", JOptionPane.INFORMATION_MESSAGE, null);
+            } else {
+                String nombre = nombreText.getText();
+                String apellido = apellidoText.getText();
+                String clave = claveText.getText();
+                String calle = calleText.getText();
+                int numero = Integer.valueOf(numeroText.getText());
+                int edad = Integer.valueOf(edadText.getText());
+                int cp = Integer.valueOf(codigoPostalText.getText());
+            }
+        }
     }
 }

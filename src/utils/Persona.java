@@ -69,4 +69,9 @@ public class Persona {
     public void setCodigoPostal(int codigoPostal) {
         this.codigoPostal = codigoPostal;
     }
+
+    @Override
+    public String toString() {
+        return getClave();
+    }
 }
